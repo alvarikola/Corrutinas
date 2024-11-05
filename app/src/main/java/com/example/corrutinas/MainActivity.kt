@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CorrutinasTheme {
                 Surface {
-                    SuperHeroList()
+                    SuperHeroList(resultado)
                 }
             }
         }
@@ -45,10 +45,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun SuperHeroList() {
-//    Text(
-//        text = resultado
-//    )
+fun SuperHeroList(String: texto) {
+    Text(
+        text = resultado
+    )
 
 
 }
