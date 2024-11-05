@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         var retrofit = RetrofitHelper.getInstance()
         lifecycleScope.launch(Dispatchers.IO){
-            val resultado: Response<SuperHeroDataResponse> = retrofit.getSuperheroes("a")
+            val resultado: Response<List<AlbumsDataResponse>> = retrofit.getAlbums()
             withContext(Dispatchers.Main){
                 if (resultado.isSuccessful) {
                     Log.i("ejemplo", "$resultado")
@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CorrutinasTheme {
                 Surface {
-                    SuperHeroList(resultado)
+                    SuperHeroList()
                 }
             }
         }
@@ -45,9 +45,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun SuperHeroList(String: texto) {
+fun SuperHeroList() {
     Text(
-        text = resultado
+        text = "hoila"
     )
 
 
