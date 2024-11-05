@@ -5,15 +5,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHelper {
     private const val URL = "https://superheroapi.com/"
+    private const val URL1 = "https://jsonplaceholder.typicode.com/"
+
 
     private val retrofit =
         Retrofit
             .Builder()
-            .baseUrl(URL)
+            .baseUrl(URL1)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-    fun getInstance():ApiService{
-        return retrofit.create(ApiService::class.java)
+    fun getInstance():ApiServiceJsonPlaceholder{
+        return retrofit.create(ApiServiceJsonPlaceholder::class.java)
     }
 }
